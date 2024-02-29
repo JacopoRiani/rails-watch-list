@@ -1,5 +1,22 @@
-<%=  form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>Create a movie list</strong></h5>
+          <%= form_with(model: @list, local: true) do |f| %>
+            <div class="form-group mb-3">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="row justify-content-center"> <!-- Center the button horizontally -->
+              <div class="col-md-6 text-center"> <!-- Adjust the column width as needed -->
+                <%= f.submit "Update", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(128, 128, 128, 0.5); /* Grey color with 50% opacity */
+  color: rgb(179, 121, 51);
 }
 
 .navbar-lewagon .navbar-collapse {

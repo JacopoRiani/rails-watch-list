@@ -1,7 +1,33 @@
-<h1>My Lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-<%= link_to "Create a movie list", new_list_path(), class: "btn btn-primary"%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-3">
+    <div class="title-container navbar-lewagon d-flex justify-content-between">
+      <div></div>
+      <h1 class="titlehome">My Lists New list</h1>
+    </div>
+<div>
+<%= image_tag "https://imgix.hoyts.com.au/cinemas/melbourne-central.jpg?fit=crop&auto=compress%2Cformat&crop=faces%2Centropy&w=1297&h=600"%></div>
+      <div class="row mb-3">
+        <% @lists.each do |list| %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <% if list.movies.any? %>
+                <%= image_tag list.movies.first.poster_url, class: 'card-list' %>
+              <% else %>
+                <%# DEFAULT IMAGE %>
+                <%= image_tag "https://pixsector.com/cache/517d8be6/av5c8336583e291842624.png", class: 'card-img-top' %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="mt-3">
+        <%= link_to "Create a movie list", new_list_path(), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
